@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: "rmm-services-server-app"
+  autoconfigure:
+    exclude:
+      org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+
+swagger:
+  service:
+    title: Remote monitoring and management api
+    description-rmm-service-server: API to monitor and manage devices
+    contextPath: rmm
+
+rmm:
+  datasource:
+    jdbc-url: jdbc:sqlserver://localhost;databaseName=NinjaRMM;useLOBs=false;socketKeepAlive=true
+    username: sa
+    password: DataQualityAutomation2021
+
+
