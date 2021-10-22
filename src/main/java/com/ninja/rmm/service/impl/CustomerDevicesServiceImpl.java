@@ -90,7 +90,7 @@ public class CustomerDevicesServiceImpl implements CustomerDevicesService {
 
         } catch (Exception e) {
             log.error("A problem occurred while trying to update customer device: " + e.getMessage());
-            return "Could not update the device. Please try again later...";
+            return "Could not update the device " + deviceManageRequest.getSystemName() + " - " + deviceManageRequest.getType();
         }
 
 

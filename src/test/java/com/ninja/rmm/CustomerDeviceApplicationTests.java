@@ -25,7 +25,7 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 @SpringBootTest
-class RmmServiceServerApplicationTests {
+class CustomerDeviceApplicationTests {
 
     @Mock
     private CustomerDevicesService customerDeviceServices;
@@ -52,6 +52,7 @@ class RmmServiceServerApplicationTests {
 
         ResponseEntity<String> result = controller.newCustomerDevice(addingDeviceRequest);
 
+        Assertions.assertEquals("Device added successfully : 1", result.getBody());
         Assertions.assertEquals(HttpStatus.OK, result.getStatusCode());
 
 
@@ -126,9 +127,11 @@ class RmmServiceServerApplicationTests {
 
         ResponseEntity<String> result = controller.removeCustomerDevice(deviceManageRequest);
 
+        Assertions.assertEquals("Device deleted successfully : 1", result.getBody());
         Assertions.assertEquals(HttpStatus.OK, result.getStatusCode());
 
 
     }
+
 
 }
